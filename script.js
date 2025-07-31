@@ -83,7 +83,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Bottom navigation functionality
 navItems.forEach(item => {
     item.addEventListener('click', () => {
-        // Remover clase active de todos los elementos
+        // Remover clase active de todos los elementos de navegación
         navItems.forEach(nav => nav.classList.remove('active'));
         // Añadir clase active al elemento clickeado
         item.classList.add('active');
@@ -91,24 +91,44 @@ navItems.forEach(item => {
         const tab = item.dataset.tab;
         console.log(`Navegando a: ${tab}`);
         
-        switch(tab) {
-            case 'home':
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                break;
-            case 'explore':
-                document.querySelector('.categories')?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'top':
-                document.querySelector('.top-rated')?.scrollIntoView({ behavior: 'smooth' });
-                break;
-            case 'favorites':
-                alert('Sección de Favoritos - Aquí verías tus animes guardados');
-                break;
-            case 'profile':
-                alert('Perfil de Usuario - Configuración y estadísticas');
-                break;
+        // Ocultar todas las secciones
+        document.querySelectorAll('.app-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        
+        // Mostrar la sección correspondiente
+        const targetSection = document.querySelector(`#${tab}-section`);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            // Scroll al top de la página
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
+});
+
+// Filtros de ranking
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('filter-btn')) {
+        // Remover active de todos los filtros
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        // Añadir active al clickeado
+        e.target.classList.add('active');
+        console.log(`Filtro seleccionado: ${e.target.textContent}`);
+    }
+    
+    if (e.target.classList.contains('tab-btn')) {
+        // Remover active de todos los tabs
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        // Añadir active al clickeado
+        e.target.classList.add('active');
+        console.log(`Tab seleccionado: ${e.target.textContent}`);
+    }
+    
+    if (e.target.classList.contains('option-btn')) {
+        const option = e.target.textContent.trim();
+        console.log(`Opción de perfil: ${option}`);
+        alert(`Función: ${option}`);
+    }
 });
 
 // Profile button

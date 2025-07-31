@@ -296,14 +296,201 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* App Content - Secciones separadas */
+.app-content {
+    padding-top: 120px; /* Espacio para header fijo */
+    padding-bottom: 100px; /* Espacio para navegación inferior */
+    min-height: 100vh;
+}
+
+.app-section {
+    display: none;
+    min-height: calc(100vh - 220px);
+}
+
+.app-section.active {
+    display: block;
+}
+
+.section-header {
+    padding: 40px 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 900;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--text-primary);
+}
+
+.page-title i {
+    color: var(--accent-color);
+    font-size: 32px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
 /* Sections */
-.featured, .categories, .top-rated {
-    padding: 80px 0;
+.featured, .categories, .top-rated, .trending, .favorites-content, .profile-content {
+    padding: 60px 0;
     background: var(--background-dark);
 }
 
-.top-rated {
-    padding-bottom: 120px; /* Espacio para navegación inferior */
+/* Filtros y Tabs */
+.ranking-filters, .favorites-tabs {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.filter-btn, .tab-btn {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .tab-btn:hover,
+.filter-btn.active, .tab-btn.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Trending Grid */
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--text-secondary);
+}
+
+.empty-state i {
+    font-size: 80px;
+    color: var(--border-color);
+    margin-bottom: 24px;
+}
+
+.empty-state h3 {
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.empty-state p {
+    margin-bottom: 32px;
+    font-size: 16px;
+}
+
+/* Profile Styles */
+.profile-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.profile-avatar i {
+    font-size: 80px;
+    color: var(--accent-color);
+}
+
+.profile-info h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.profile-info p {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.stat-item {
+    background: var(--card-bg);
+    padding: 32px 24px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.stat-value {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+.profile-options {
+    display: grid;
+    gap: 16px;
+}
+
+.option-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 20px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.option-btn:hover {
+    background: var(--secondary-color);
+    border-color: var(--accent-color);
+    transform: translateX(8px);
+}
+
+.option-btn i {
+    color: var(--accent-color);
+    font-size: 20px;
 }
 
 .section-title {
