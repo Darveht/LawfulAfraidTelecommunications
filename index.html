@@ -1,16 +1,300 @@
+
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeDB - Enciclopedia de Anime</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <i class="fas fa-play-circle"></i>
+                    <span>AnimeDB</span>
+                </div>
+                <div class="nav-search">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar animes, personajes, géneros..." id="searchInput">
+                        <button class="search-btn">Buscar</button>
+                    </div>
+                </div>
+                <div class="nav-menu">
+                    <a href="#" class="nav-link">Inicio</a>
+                    <a href="#" class="nav-link">Top Animes</a>
+                    <a href="#" class="nav-link">Géneros</a>
+                    <a href="#" class="nav-link">Temporadas</a>
+                    <button class="login-btn">Iniciar Sesión</button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>La Enciclopedia Definitiva del Anime</h1>
+                <p>Descubre, explora y añade información sobre tus animes favoritos. Más de 50,000 series catalogadas.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Añadir Anime
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-random"></i>
+                        Anime Aleatorio
+                    </button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">50,234</div>
+                    <div class="stat-label">Animes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2.5M</div>
+                    <div class="stat-label">Usuarios</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12.8M</div>
+                    <div class="stat-label">Reseñas</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-star"></i>
+                Destacados Esta Semana
+            </h2>
+            <div class="featured-grid">
+                <div class="featured-main">
+                    <div class="anime-card featured-card">
+                        <div class="card-image">
+                            <img src="https://via.placeholder.com/400x600/1a1a2e/eee?text=Attack+on+Titan" alt="Attack on Titan">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Attack on Titan: The Final Season</h3>
+                            <div class="card-meta">
+                                <span class="rating">
+                                    <i class="fas fa-star"></i>
+                                    9.8
+                                </span>
+                                <span class="year">2023</span>
+                                <span class="episodes">28 eps</span>
+                            </div>
+                            <p class="card-description">La conclusión épica de la serie más aclamada de la década.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-side">
+                    <div class="anime-card small-card">
+                        <img src="https://via.placeholder.com/150x200/16213e/eee?text=Demon+Slayer" alt="Demon Slayer">
+                        <div class="small-card-content">
+                            <h4>Demon Slayer</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                9.5
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anime-card small-card">
+                        <img src="https://via.placeholder.com/150x200/0f3460/eee?text=Jujutsu+Kaisen" alt="Jujutsu Kaisen">
+                        <div class="small-card-content">
+                            <h4>Jujutsu Kaisen</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                9.2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anime-card small-card">
+                        <img src="https://via.placeholder.com/150x200/533483/eee?text=Spy+Family" alt="Spy x Family">
+                        <div class="small-card-content">
+                            <h4>Spy x Family</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                9.0
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-th-large"></i>
+                Explorar por Géneros
+            </h2>
+            <div class="category-grid">
+                <div class="category-card" data-genre="action">
+                    <i class="fas fa-fist-raised"></i>
+                    <h3>Acción</h3>
+                    <span>2,543 animes</span>
+                </div>
+                <div class="category-card" data-genre="romance">
+                    <i class="fas fa-heart"></i>
+                    <h3>Romance</h3>
+                    <span>1,876 animes</span>
+                </div>
+                <div class="category-card" data-genre="comedy">
+                    <i class="fas fa-laugh"></i>
+                    <h3>Comedia</h3>
+                    <span>3,124 animes</span>
+                </div>
+                <div class="category-card" data-genre="drama">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3>Drama</h3>
+                    <span>2,087 animes</span>
+                </div>
+                <div class="category-card" data-genre="fantasy">
+                    <i class="fas fa-magic"></i>
+                    <h3>Fantasía</h3>
+                    <span>1,654 animes</span>
+                </div>
+                <div class="category-card" data-genre="horror">
+                    <i class="fas fa-ghost"></i>
+                    <h3>Terror</h3>
+                    <span>892 animes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Rated -->
+    <section class="top-rated">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-trophy"></i>
+                Top 10 Mejor Valorados
+            </h2>
+            <div class="top-list">
+                <div class="top-item">
+                    <div class="rank">1</div>
+                    <img src="https://via.placeholder.com/80x120/1a1a2e/eee?text=FMA" alt="Fullmetal Alchemist">
+                    <div class="item-info">
+                        <h4>Fullmetal Alchemist: Brotherhood</h4>
+                        <div class="item-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                9.9
+                            </span>
+                            <span class="votes">1.2M votos</span>
+                        </div>
+                    </div>
+                    <button class="add-list-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="top-item">
+                    <div class="rank">2</div>
+                    <img src="https://via.placeholder.com/80x120/16213e/eee?text=AOT" alt="Attack on Titan">
+                    <div class="item-info">
+                        <h4>Attack on Titan</h4>
+                        <div class="item-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                9.8
+                            </span>
+                            <span class="votes">980K votos</span>
+                        </div>
+                    </div>
+                    <button class="add-list-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="top-item">
+                    <div class="rank">3</div>
+                    <img src="https://via.placeholder.com/80x120/0f3460/eee?text=Spirited" alt="Spirited Away">
+                    <div class="item-info">
+                        <h4>El Viaje de Chihiro</h4>
+                        <div class="item-meta">
+                            <span class="rating">
+                                <i class="fas fa-star"></i>
+                                9.7
+                            </span>
+                            <span class="votes">876K votos</span>
+                        </div>
+                    </div>
+                    <button class="add-list-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <button class="view-more-btn">Ver Top 100 Completo</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-play-circle"></i>
+                        <span>AnimeDB</span>
+                    </div>
+                    <p>La enciclopedia de anime más completa del mundo.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Explorar</h4>
+                    <ul>
+                        <li><a href="#">Top Animes</a></li>
+                        <li><a href="#">Nuevos Lanzamientos</a></li>
+                        <li><a href="#">Clásicos</a></li>
+                        <li><a href="#">Películas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Comunidad</h4>
+                    <ul>
+                        <li><a href="#">Foros</a></li>
+                        <li><a href="#">Reseñas</a></li>
+                        <li><a href="#">Listas de Usuarios</a></li>
+                        <li><a href="#">Contribuir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Soporte</h4>
+                    <ul>
+                        <li><a href="#">Centro de Ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AnimeDB. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
