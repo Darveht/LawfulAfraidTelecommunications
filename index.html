@@ -4,27 +4,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediaDB - Enciclopedia de Entretenimiento</title>
+    <title>CyberVault - Plataforma de Entretenimiento Digital</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-content">
+            <div class="search-header">
+                <h2><i class="fas fa-search"></i> Búsqueda Avanzada</h2>
+                <button class="close-search" id="closeSearch">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-main">
+                <div class="search-input-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar series, películas, animes..." id="mainSearchInput">
+                    <div class="search-spinner" id="searchSpinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                </div>
+                <div class="search-filters">
+                    <button class="filter-chip active" data-type="all">Todo</button>
+                    <button class="filter-chip" data-type="anime">Anime</button>
+                    <button class="filter-chip" data-type="series">Series</button>
+                    <button class="filter-chip" data-type="movies">Películas</button>
+                </div>
+            </div>
+            <div class="search-content">
+                <div class="trending-searches">
+                    <h3><i class="fas fa-fire"></i> Tendencias de Búsqueda</h3>
+                    <div class="trending-tags">
+                        <span class="trending-tag">Attack on Titan</span>
+                        <span class="trending-tag">Breaking Bad</span>
+                        <span class="trending-tag">Demon Slayer</span>
+                        <span class="trending-tag">Stranger Things</span>
+                        <span class="trending-tag">One Piece</span>
+                        <span class="trending-tag">The Witcher</span>
+                    </div>
+                </div>
+                <div class="search-results" id="searchResults">
+                    <!-- Los resultados aparecerán aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- App Header -->
     <header class="app-header">
-        <div class="header-content">
-            <div class="app-title">
-                <i class="fas fa-play-circle"></i>
-                <span>MediaDB</span>
-            </div>
-            <button class="profile-btn">
-                <i class="fas fa-user-circle"></i>
-            </button>
-        </div>
         <div class="search-bar">
-            <div class="search-container">
+            <div class="search-container" id="searchTrigger">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Buscar series, películas, animes..." id="searchInput">
+                <input type="text" placeholder="Buscar contenido..." readonly>
+                <div class="search-voice">
+                    <i class="fas fa-microphone"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -32,24 +69,24 @@
     <!-- Bottom Navigation -->
     <nav class="bottom-nav">
         <div class="nav-item active" data-tab="home">
-            <i class="fas fa-home"></i>
-            <span>Inicio</span>
+            <i class="fas fa-shield-alt"></i>
+            <span>Base</span>
         </div>
         <div class="nav-item" data-tab="explore">
-            <i class="fas fa-compass"></i>
+            <i class="fas fa-radar-dish"></i>
             <span>Explorar</span>
         </div>
         <div class="nav-item" data-tab="top">
-            <i class="fas fa-trophy"></i>
-            <span>Top</span>
+            <i class="fas fa-medal"></i>
+            <span>Elite</span>
         </div>
         <div class="nav-item" data-tab="favorites">
-            <i class="fas fa-heart"></i>
-            <span>Favoritos</span>
+            <i class="fas fa-bookmark"></i>
+            <span>Arsenal</span>
         </div>
         <div class="nav-item" data-tab="profile">
-            <i class="fas fa-user"></i>
-            <span>Perfil</span>
+            <i class="fas fa-user-secret"></i>
+            <span>Operador</span>
         </div>
     </nav>
 
@@ -62,8 +99,8 @@
             <div class="hero">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>La Enciclopedia Definitiva de Entretenimiento</h1>
-                        <p>Descubre, explora y añade información sobre tus series, películas y animes favoritos. Más de 250,000 títulos catalogados.</p>
+                        <h1>La Fortaleza Digital del Entretenimiento</h1>
+                        <p>Accede al arsenal más completo de contenido digital. Series, películas y animes clasificados con precisión militar. Más de 250,000 títulos en la base de datos.</p>
                         <div class="hero-buttons">
                             <button class="btn-primary">
                                 <i class="fas fa-plus"></i>
