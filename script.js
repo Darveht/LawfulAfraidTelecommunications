@@ -1,15 +1,22 @@
 
 // DOM Elements
 const searchInput = document.getElementById('searchInput');
-const searchBtn = document.querySelector('.search-btn');
 const categoryCards = document.querySelectorAll('.category-card');
 const addListBtns = document.querySelectorAll('.add-list-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const profileBtn = document.querySelector('.profile-btn');
 
 // Search functionality
-searchBtn.addEventListener('click', handleSearch);
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         handleSearch();
+    }
+});
+
+searchInput.addEventListener('input', (e) => {
+    if (e.target.value.trim().length > 2) {
+        // Búsqueda en tiempo real
+        console.log(`Buscando: ${e.target.value.trim()}`);
     }
 });
 
@@ -17,8 +24,7 @@ function handleSearch() {
     const query = searchInput.value.trim();
     if (query) {
         console.log(`Buscando: ${query}`);
-        // Here you would implement actual search functionality
-        alert(`Funcionalidad de búsqueda implementada para: "${query}"`);
+        alert(`Buscando anime: "${query}"`);
     }
 }
 
@@ -74,6 +80,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Bottom navigation functionality
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Remover clase active de todos los elementos
+        navItems.forEach(nav => nav.classList.remove('active'));
+        // Añadir clase active al elemento clickeado
+        item.classList.add('active');
+        
+        const tab = item.dataset.tab;
+        console.log(`Navegando a: ${tab}`);
+        
+        switch(tab) {
+            case 'home':
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                break;
+            case 'explore':
+                document.querySelector('.categories')?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'top':
+                document.querySelector('.top-rated')?.scrollIntoView({ behavior: 'smooth' });
+                break;
+            case 'favorites':
+                alert('Sección de Favoritos - Aquí verías tus animes guardados');
+                break;
+            case 'profile':
+                alert('Perfil de Usuario - Configuración y estadísticas');
+                break;
+        }
+    });
+});
+
+// Profile button
+profileBtn.addEventListener('click', () => {
+    alert('Perfil de Usuario - Configuración de la cuenta');
+});
+
 // Random anime button
 document.querySelector('.btn-secondary').addEventListener('click', () => {
     const animes = [
@@ -98,18 +140,17 @@ document.querySelector('.btn-primary').addEventListener('click', () => {
     alert('Funcionalidad para añadir nuevo anime - Aquí se abriría un formulario');
 });
 
-// Login button
-document.querySelector('.login-btn').addEventListener('click', () => {
-    alert('Funcionalidad de login - Aquí se abriría el modal de login');
-});
 
-// Navbar scroll effect
+
+// App header scroll effect
 window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(0, 0, 0, 0.95)';
+    const header = document.querySelector('.app-header');
+    if (window.scrollY > 50) {
+        header.style.background = 'rgba(15, 15, 35, 0.95)';
+        header.style.backdropFilter = 'blur(20px)';
     } else {
-        header.style.background = 'rgba(0, 0, 0, 0.9)';
+        header.style.background = 'var(--background-dark)';
+        header.style.backdropFilter = 'none';
     }
 });
 

@@ -10,31 +10,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-brand">
-                    <i class="fas fa-play-circle"></i>
-                    <span>AnimeDB</span>
-                </div>
-                <div class="nav-search">
-                    <div class="search-container">
-                        <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Buscar animes, personajes, géneros..." id="searchInput">
-                        <button class="search-btn">Buscar</button>
-                    </div>
-                </div>
-                <div class="nav-menu">
-                    <a href="#" class="nav-link">Inicio</a>
-                    <a href="#" class="nav-link">Top Animes</a>
-                    <a href="#" class="nav-link">Géneros</a>
-                    <a href="#" class="nav-link">Temporadas</a>
-                    <button class="login-btn">Iniciar Sesión</button>
-                </div>
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="app-title">
+                <i class="fas fa-play-circle"></i>
+                <span>AnimeDB</span>
             </div>
-        </nav>
+            <button class="profile-btn">
+                <i class="fas fa-user-circle"></i>
+            </button>
+        </div>
+        <div class="search-bar">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar animes..." id="searchInput">
+            </div>
+        </div>
     </header>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" data-tab="home">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </div>
+        <div class="nav-item" data-tab="explore">
+            <i class="fas fa-compass"></i>
+            <span>Explorar</span>
+        </div>
+        <div class="nav-item" data-tab="top">
+            <i class="fas fa-trophy"></i>
+            <span>Top</span>
+        </div>
+        <div class="nav-item" data-tab="favorites">
+            <i class="fas fa-heart"></i>
+            <span>Favoritos</span>
+        </div>
+        <div class="nav-item" data-tab="profile">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -284,7 +301,7 @@
                     <ul>
                         <li><a href="#">Centro de Ayuda</a></li>
                         <li><a href="#">Contacto</a></li>
-                        <li><a href="#">API</a></li>
+                        <li><a href="#">Acerca de</a></li>
                         <li><a href="#">Privacidad</a></li>
                     </ul>
                 </div>
