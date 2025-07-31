@@ -136,28 +136,30 @@ profileBtn.addEventListener('click', () => {
     alert('Perfil de Usuario - Configuración de la cuenta');
 });
 
-// Random anime button
+// Random content button
 document.querySelector('.btn-secondary').addEventListener('click', () => {
-    const animes = [
+    const content = [
         'Attack on Titan',
+        'Breaking Bad',
+        'The Witcher',
+        'Avengers: Endgame',
+        'Stranger Things',
         'Demon Slayer',
-        'Jujutsu Kaisen',
-        'One Piece',
-        'Naruto',
-        'Death Note',
-        'Fullmetal Alchemist',
-        'Dragon Ball Z',
-        'My Hero Academia',
-        'Spirited Away'
+        'Game of Thrones',
+        'Spider-Man: No Way Home',
+        'The Office',
+        'Spirited Away',
+        'Friends',
+        'Interstellar'
     ];
     
-    const randomAnime = animes[Math.floor(Math.random() * animes.length)];
-    alert(`Anime aleatorio: ${randomAnime}`);
+    const randomContent = content[Math.floor(Math.random() * content.length)];
+    alert(`Contenido aleatorio: ${randomContent}`);
 });
 
-// Add anime button
+// Add content button
 document.querySelector('.btn-primary').addEventListener('click', () => {
-    alert('Funcionalidad para añadir nuevo anime - Aquí se abriría un formulario');
+    alert('Funcionalidad para añadir nuevo contenido - Aquí se abriría un formulario');
 });
 
 
@@ -202,4 +204,4 @@ document.querySelector('.view-more-btn').addEventListener('click', () => {
     alert('Funcionalidad para mostrar Top 100 completo');
 });
 
-console.log('AnimeDB - Plataforma inicializada correctamente');
+console.log('MediaDB - Plataforma de entretenimiento inicializada correctamente');

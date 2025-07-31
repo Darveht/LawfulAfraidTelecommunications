@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimeDB - Enciclopedia de Anime</title>
+    <title>MediaDB - Enciclopedia de Entretenimiento</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
         <div class="header-content">
             <div class="app-title">
                 <i class="fas fa-play-circle"></i>
-                <span>AnimeDB</span>
+                <span>MediaDB</span>
             </div>
             <button class="profile-btn">
                 <i class="fas fa-user-circle"></i>
@@ -24,7 +24,7 @@
         <div class="search-bar">
             <div class="search-container">
                 <i class="fas fa-search"></i>
-                <input type="text" placeholder="Buscar animes..." id="searchInput">
+                <input type="text" placeholder="Buscar series, películas, animes..." id="searchInput">
             </div>
         </div>
     </header>
@@ -62,30 +62,30 @@
             <div class="hero">
                 <div class="hero-content">
                     <div class="hero-text">
-                        <h1>La Enciclopedia Definitiva del Anime</h1>
-                        <p>Descubre, explora y añade información sobre tus animes favoritos. Más de 50,000 series catalogadas.</p>
+                        <h1>La Enciclopedia Definitiva de Entretenimiento</h1>
+                        <p>Descubre, explora y añade información sobre tus series, películas y animes favoritos. Más de 250,000 títulos catalogados.</p>
                         <div class="hero-buttons">
                             <button class="btn-primary">
                                 <i class="fas fa-plus"></i>
-                                Añadir Anime
+                                Añadir Contenido
                             </button>
                             <button class="btn-secondary">
                                 <i class="fas fa-random"></i>
-                                Anime Aleatorio
+                                Contenido Aleatorio
                             </button>
                         </div>
                     </div>
                     <div class="hero-stats">
                         <div class="stat-card">
-                            <div class="stat-number">50,234</div>
-                            <div class="stat-label">Animes</div>
+                            <div class="stat-number">250K+</div>
+                            <div class="stat-label">Títulos</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">2.5M</div>
+                            <div class="stat-number">5.2M</div>
                             <div class="stat-label">Usuarios</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">12.8M</div>
+                            <div class="stat-number">28.5M</div>
                             <div class="stat-label">Reseñas</div>
                         </div>
                     </div>
@@ -157,9 +157,9 @@
                 <div class="container">
                     <h1 class="page-title">
                         <i class="fas fa-compass"></i>
-                        Explorar Animes
+                        Explorar Contenido
                     </h1>
-                    <p class="page-subtitle">Descubre nuevos animes por categorías y géneros</p>
+                    <p class="page-subtitle">Descubre series, películas y animes por categorías</p>
                 </div>
             </div>
 
@@ -170,35 +170,35 @@
                         Explorar por Géneros
                     </h2>
                     <div class="category-grid">
+                        <div class="category-card" data-genre="series">
+                            <i class="fas fa-tv"></i>
+                            <h3>Series TV</h3>
+                            <span>45,320 títulos</span>
+                        </div>
+                        <div class="category-card" data-genre="movies">
+                            <i class="fas fa-film"></i>
+                            <h3>Películas</h3>
+                            <span>38,760 títulos</span>
+                        </div>
+                        <div class="category-card" data-genre="anime">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>Anime</h3>
+                            <span>52,430 títulos</span>
+                        </div>
                         <div class="category-card" data-genre="action">
                             <i class="fas fa-fist-raised"></i>
                             <h3>Acción</h3>
-                            <span>2,543 animes</span>
-                        </div>
-                        <div class="category-card" data-genre="romance">
-                            <i class="fas fa-heart"></i>
-                            <h3>Romance</h3>
-                            <span>1,876 animes</span>
+                            <span>28,540 títulos</span>
                         </div>
                         <div class="category-card" data-genre="comedy">
                             <i class="fas fa-laugh"></i>
                             <h3>Comedia</h3>
-                            <span>3,124 animes</span>
+                            <span>35,124 títulos</span>
                         </div>
                         <div class="category-card" data-genre="drama">
                             <i class="fas fa-theater-masks"></i>
                             <h3>Drama</h3>
-                            <span>2,087 animes</span>
-                        </div>
-                        <div class="category-card" data-genre="fantasy">
-                            <i class="fas fa-magic"></i>
-                            <h3>Fantasía</h3>
-                            <span>1,654 animes</span>
-                        </div>
-                        <div class="category-card" data-genre="horror">
-                            <i class="fas fa-ghost"></i>
-                            <h3>Terror</h3>
-                            <span>892 animes</span>
+                            <span>42,087 títulos</span>
                         </div>
                     </div>
                 </div>
@@ -323,7 +323,7 @@
                         <i class="fas fa-heart"></i>
                         Mis Favoritos
                     </h1>
-                    <p class="page-subtitle">Tus animes guardados y listas personalizadas</p>
+                    <p class="page-subtitle">Tu contenido guardado y listas personalizadas</p>
                 </div>
             </div>
 
@@ -339,9 +339,9 @@
                     <div class="favorites-grid">
                         <div class="empty-state">
                             <i class="fas fa-heart-broken"></i>
-                            <h3>No tienes animes favoritos aún</h3>
-                            <p>Comienza a agregar animes a tu lista personal</p>
-                            <button class="btn-primary">Explorar Animes</button>
+                            <h3>No tienes contenido favorito aún</h3>
+                            <p>Comienza a agregar series, películas y animes a tu lista personal</p>
+                            <button class="btn-primary">Explorar Contenido</button>
                         </div>
                     </div>
                 </div>
@@ -375,15 +375,15 @@
                     <div class="profile-stats">
                         <div class="stat-item">
                             <div class="stat-value">0</div>
-                            <div class="stat-label">Animes Vistos</div>
+                            <div class="stat-label">Títulos Vistos</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-value">0</div>
-                            <div class="stat-label">Episodios</div>
+                            <div class="stat-label">Horas Vistas</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-value">0</div>
-                            <div class="stat-label">Días Viendo</div>
+                            <div class="stat-label">Días Totales</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-value">0</div>
